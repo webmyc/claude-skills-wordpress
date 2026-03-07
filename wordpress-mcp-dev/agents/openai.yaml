@@ -1,0 +1,4 @@
+interface:
+  display_name: "WordPress MCP Dev"
+  short_description: "Build secure WordPress and MCP products"
+  default_prompt: "Use $wordpress-mcp-dev to help me implement a secure WordPress plugin and MCP server workflow for this project."

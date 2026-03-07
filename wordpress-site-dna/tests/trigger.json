@@ -1,0 +1,36 @@
+{
+  "test_suite": "wordpress-site-dna-trigger",
+  "version": "1.0.0",
+  "description": "Trigger phrase accuracy test — should fire on relevant WordPress audit requests, not on unrelated queries",
+  "target_false_positive_rate": 0.05,
+  "target_false_negative_rate": 0.05,
+  "should_trigger": [
+    { "phrase": "analyze my wordpress site", "confidence": "high" },
+    { "phrase": "wordpress site audit", "confidence": "high" },
+    { "phrase": "site dna analysis", "confidence": "high" },
+    { "phrase": "what's running on my site", "confidence": "high" },
+    { "phrase": "wordpress archaeology", "confidence": "high" },
+    { "phrase": "scan my wordpress installation", "confidence": "high" },
+    { "phrase": "check my wordpress setup", "confidence": "high" },
+    { "phrase": "audit my WP site", "confidence": "high" },
+    { "phrase": "what plugins do I have installed", "confidence": "medium" },
+    { "phrase": "is my wordpress up to date", "confidence": "medium" },
+    { "phrase": "check my site health", "confidence": "medium" },
+    { "phrase": "run a wordpress health check", "confidence": "high" },
+    { "phrase": "what page builders are on my site", "confidence": "medium" },
+    { "phrase": "site dna", "confidence": "high" },
+    { "phrase": "wordpress x-ray", "confidence": "medium" }
+  ],
+  "should_not_trigger": [
+    { "phrase": "how do I install WordPress", "reason": "general WordPress help, not audit" },
+    { "phrase": "what is Elementor", "reason": "informational, not audit" },
+    { "phrase": "fix this CSS bug on my site", "reason": "specific fix, not audit" },
+    { "phrase": "how do I write a blog post", "reason": "content creation, not audit" },
+    { "phrase": "what is a WordPress plugin", "reason": "educational, not audit" },
+    { "phrase": "analyze my React application", "reason": "wrong platform" },
+    { "phrase": "check my Shopify store", "reason": "wrong platform" },
+    { "phrase": "analyze this code snippet", "reason": "code review, not site audit" },
+    { "phrase": "audit my finances", "reason": "different domain" },
+    { "phrase": "update my theme", "reason": "specific action, not full audit" }
+  ]
+}

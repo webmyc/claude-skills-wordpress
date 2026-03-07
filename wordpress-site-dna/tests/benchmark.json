@@ -1,0 +1,138 @@
+{
+  "test_suite": "wordpress-site-dna-benchmark",
+  "version": "1.0.0",
+  "description": "End-to-end benchmark comparing WordPress Site DNA skill output against manual audit gold standard",
+  "target_pass_rate": 0.95,
+  "target_time_ms": 60000,
+  "tests": [
+    {
+      "id": "bench-001",
+      "name": "Simple site — single Gutenberg builder",
+      "input": "analyze my wordpress site",
+      "site_config": {
+        "wordpress_version": "6.4.3",
+        "php_version": "8.2",
+        "builders": ["gutenberg"],
+        "plugins_total": 8,
+        "plugins_active": 7,
+        "plugins_inactive": 1
+      },
+      "expected": {
+        "health_score_min": 70,
+        "builders_detected": ["gutenberg"],
+        "complexity_rating": "Simple",
+        "report_sections": ["Executive Summary", "Page Builders Detected", "Plugin Analysis", "Security Posture"],
+        "telemetry_sent": true
+      },
+      "pass_criteria": [
+        "health_score >= 70",
+        "exactly 1 builder detected",
+        "complexity rating = Simple",
+        "all required report sections present",
+        "telemetry POST fired"
+      ]
+    },
+    {
+      "id": "bench-002",
+      "name": "Agency site — three builders",
+      "input": "wordpress archaeology on my site",
+      "site_config": {
+        "wordpress_version": "6.3.1",
+        "php_version": "7.4",
+        "builders": ["elementor", "divi", "wpbakery"],
+        "plugins_total": 47,
+        "plugins_active": 31,
+        "plugins_inactive": 16,
+        "has_orphaned_shortcodes": true
+      },
+      "expected": {
+        "builders_detected": ["elementor", "divi", "wpbakery"],
+        "complexity_rating": "Complex",
+        "php_warning": true,
+        "consolidation_recommendation": true,
+        "orphaned_shortcodes_mentioned": true
+      },
+      "pass_criteria": [
+        "3+ builders detected",
+        "PHP 7.4 flagged as EOL",
+        "complexity = Complex or Archaeological Dig",
+        "consolidation recommendation in report",
+        "orphaned shortcodes section present"
+      ]
+    },
+    {
+      "id": "bench-003",
+      "name": "E-commerce with security issues",
+      "input": "site dna analysis",
+      "site_config": {
+        "wordpress_version": "5.8",
+        "php_version": "7.2",
+        "builders": ["elementor", "gutenberg"],
+        "plugins_total": 28,
+        "admin_username_is_admin": true,
+        "ssl_enabled": true,
+        "security_plugin": false
+      },
+      "expected": {
+        "health_score_max": 60,
+        "critical_issues_min": 2,
+        "security_risk_level": "High",
+        "admin_username_flagged": true,
+        "wordpress_outdated_flagged": true
+      },
+      "pass_criteria": [
+        "health_score <= 60",
+        "at least 2 critical issues",
+        "admin username flagged",
+        "WP 5.8 flagged as outdated",
+        "PHP 7.2 flagged as EOL"
+      ]
+    },
+    {
+      "id": "bench-004",
+      "name": "Optimized site — high performance",
+      "input": "check my wordpress setup",
+      "site_config": {
+        "wordpress_version": "6.4.3",
+        "php_version": "8.3",
+        "builders": ["gutenberg"],
+        "plugins_total": 12,
+        "plugins_active": 12,
+        "has_caching": true,
+        "has_cdn": true,
+        "images_optimized": true,
+        "ssl_enabled": true,
+        "security_plugin": "wordfence"
+      },
+      "expected": {
+        "health_score_min": 80,
+        "performance_score_min": 12,
+        "security_risk_level": "Low"
+      },
+      "pass_criteria": [
+        "health_score >= 80",
+        "performance score >= 12/15",
+        "security risk level = Low or Medium",
+        "positive summary tone"
+      ]
+    },
+    {
+      "id": "bench-005",
+      "name": "No Respira installed — graceful stop",
+      "input": "what's running on my wordpress site",
+      "context": "MCP tools not available — Respira not installed",
+      "expected": {
+        "stops_gracefully": true,
+        "installation_guide_shown": true,
+        "respira_press_link": "https://www.respira.press",
+        "no_error_stacktrace": true
+      },
+      "pass_criteria": [
+        "No stack trace or raw error shown",
+        "Installation guide with numbered steps",
+        "respira.press link present",
+        "Friendly tone maintained"
+      ]
+    }
+  ]
+}

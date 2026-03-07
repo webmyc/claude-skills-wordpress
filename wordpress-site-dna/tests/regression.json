@@ -1,0 +1,150 @@
+{
+  "test_suite": "wordpress-site-dna-regression",
+  "version": "1.0.0",
+  "description": "Regression test suite — verify correctness across varied WordPress site configurations",
+  "tests": [
+    {
+      "id": "reg-001",
+      "name": "Minimal WordPress — fresh install",
+      "config": {
+        "wordpress_version": "6.4.3",
+        "php_version": "8.2",
+        "builders": ["gutenberg"],
+        "plugins": ["akismet", "hello-dolly", "woo"],
+        "plugins_active": 2,
+        "plugins_inactive": 1,
+        "multisite": false,
+        "debug_mode": false
+      },
+      "assertions": [
+        "health_score >= 75",
+        "complexity_rating = Simple",
+        "builder_count = 1",
+        "inactive_plugin_count = 1",
+        "report_complete = true"
+      ]
+    },
+    {
+      "id": "reg-002",
+      "name": "Agency site — multiple builders",
+      "config": {
+        "wordpress_version": "6.2.0",
+        "php_version": "8.1",
+        "builders": ["elementor", "divi", "wpbakery", "gutenberg"],
+        "plugins_total": 52,
+        "plugins_active": 38,
+        "plugins_inactive": 14,
+        "orphaned_shortcodes": 23
+      },
+      "assertions": [
+        "builder_count = 4",
+        "complexity_rating = Archaeological Dig",
+        "consolidation_recommendation present",
+        "orphaned_shortcodes > 0",
+        "health_score <= 60"
+      ]
+    },
+    {
+      "id": "reg-003",
+      "name": "WordPress Multisite network",
+      "config": {
+        "wordpress_version": "6.4.3",
+        "php_version": "8.2",
+        "multisite": true,
+        "sites_count": 5,
+        "builders": ["elementor", "gutenberg"],
+        "plugins_total": 35
+      },
+      "assertions": [
+        "multisite_detected = true",
+        "multisite_mentioned_in_report = true",
+        "report_complete = true"
+      ]
+    },
+    {
+      "id": "reg-004",
+      "name": "High-traffic WooCommerce site",
+      "config": {
+        "wordpress_version": "6.4.2",
+        "php_version": "8.2",
+        "builders": ["elementor", "gutenberg"],
+        "plugins_total": 41,
+        "woocommerce_active": true,
+        "has_caching": true,
+        "has_cdn": true,
+        "has_object_cache": true
+      },
+      "assertions": [
+        "woocommerce_mentioned = true",
+        "caching_detected = true",
+        "performance_score >= 10",
+        "report_complete = true"
+      ]
+    },
+    {
+      "id": "reg-005",
+      "name": "Site with critical security issues",
+      "config": {
+        "wordpress_version": "5.5.0",
+        "php_version": "7.2",
+        "builders": ["elementor"],
+        "admin_username": "admin",
+        "ssl_enabled": false,
+        "security_plugin": null,
+        "vulnerable_plugins": ["revolution-slider-old-version"],
+        "file_permissions": "777"
+      },
+      "assertions": [
+        "critical_issues >= 3",
+        "security_risk_level = Critical",
+        "health_score <= 40",
+        "admin_username_flagged = true",
+        "ssl_flagged = true",
+        "php_eol_flagged = true",
+        "wp_outdated_flagged = true"
+      ]
+    },
+    {
+      "id": "reg-006",
+      "name": "MCP connection failure — partial results",
+      "config": {
+        "mcp_available": true,
+        "site_reachable": true,
+        "tool_failures": ["wordpress_mcp:get_performance_metrics", "wordpress_mcp:check_security"]
+      },
+      "assertions": [
+        "partial_analysis_warning shown",
+        "available_sections listed",
+        "failed_sections listed",
+        "report_not_empty = true",
+        "user_not_shown_error_stacktrace = true"
+      ]
+    },
+    {
+      "id": "reg-007",
+      "name": "Pristine optimized site",
+      "config": {
+        "wordpress_version": "6.4.3",
+        "php_version": "8.3",
+        "builders": ["gutenberg"],
+        "plugins_total": 10,
+        "plugins_active": 10,
+        "all_plugins_current": true,
+        "has_caching": true,
+        "has_cdn": true,
+        "images_optimized": true,
+        "ssl_enabled": true,
+        "security_plugin": "wordfence",
+        "admin_username": "siteadmin",
+        "login_url_customized": true
+      },
+      "assertions": [
+        "health_score >= 88",
+        "security_risk_level = Low",
+        "complexity_rating = Simple",
+        "positive_summary_tone = true",
+        "quick_wins_count <= 2"
+      ]
+    }
+  ]
+}
