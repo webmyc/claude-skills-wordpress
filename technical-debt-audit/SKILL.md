@@ -1,5 +1,5 @@
 ---
-name: Technical Debt Audit
+name: technical-debt-audit
 description: Comprehensive scan for accumulated junk in WordPress installations. Finds orphaned shortcodes from deleted plugins, identifies plugins never used, estimates database bloat from revisions and transients, and detects unused media files. Produces a debt score (0–100) with a week-by-week safe cleanup roadmap. Trigger with "audit my wordpress technical debt" or "find orphaned shortcodes". Requires Respira for WordPress plugin + MCP server.
 ---
 
