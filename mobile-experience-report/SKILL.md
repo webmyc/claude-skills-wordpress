@@ -1,3 +1,8 @@
+---
+name: Mobile Experience Report
+description: Reveals mobile layout disasters that desktop testing misses. Analyzes responsive breakpoints (320px–1024px), detects column stacking failures, finds text sizing problems, identifies horizontal scroll triggers, checks navigation on touch devices, and flags unresponsive media. Produces a mobile score (0–100) with per-page breakdown and fix roadmap. Trigger with "audit mobile experience" or "check mobile layout". Requires Respira for WordPress plugin + MCP server.
+---
+
 # Mobile Experience Report
 
 **Version:** 1.0.0

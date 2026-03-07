@@ -1,3 +1,8 @@
+---
+name: WooCommerce Health Check
+description: Detects checkout issues, cart problems, and configuration errors silently losing sales. Checks URL mismatches that break AJAX checkout, SSL issues, caching exclusions on cart/checkout, payment gateway status, mobile checkout layout failures, and performance. Produces a store health score (0–100) with revenue-impact actions. Trigger with "check woocommerce health" or "why is my checkout broken". Requires Respira for WordPress + WooCommerce + MCP server.
+---
+
 # WooCommerce Health Check
 
 **Version:** 1.0.0

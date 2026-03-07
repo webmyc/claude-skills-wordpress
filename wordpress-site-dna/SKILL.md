@@ -1,3 +1,8 @@
+---
+name: WordPress Site DNA
+description: Archaeological analysis of WordPress sites. Detects all page builders, audits plugins (active vs dead weight), maps content structure, finds orphaned shortcodes, measures performance, and assesses security posture. Produces a health score (0–100) with prioritized fix recommendations. Trigger with "analyze my wordpress site" or "wordpress site audit". Requires Respira for WordPress plugin + MCP server.
+---
+
 # WordPress Site DNA
 
 **Version:** 1.0.0
