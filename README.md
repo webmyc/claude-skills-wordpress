@@ -1,86 +1,100 @@
 # Claude Skills for WordPress
 
-**Open source Claude AI skills for WordPress developers and site owners.**
+The community hub for WordPress AI workflows.
 
-These skills work with [Respira for WordPress](https://www.respira.press) — a WordPress plugin that connects Claude AI to your site via MCP (Model Context Protocol). Each skill is a structured prompt that tells Claude exactly how to analyze or work with your WordPress installation.
+Skills that run inside Claude to analyze, audit, optimize, and fix WordPress sites.  
+Built by the community. Curated by Respira. Open source.
+
+**Live Directory:** https://www.respira.press/skills
+
+---
+
+## What Are Skills?
+
+Skills teach Claude how to work with WordPress in ways that respect your site's architecture and your need for control.
+
+**Plain Claude:** Generic guidance based on best practices  
+**Respira for WordPress-powered skills:** Deep site access via 103+ MCP tools
 
 ---
 
 ## Available Skills
 
-| Skill | Trigger | What it does |
-|-------|---------|--------------|
-| [WordPress Site DNA](./wordpress-site-dna/) | `"analyze my wordpress site"` | Full archaeological audit — builders, plugins, content, performance, security |
-| [Technical Debt Audit](./technical-debt-audit/) | `"audit my wordpress technical debt"` | Orphaned shortcodes, unused plugins, database bloat, unused media |
-| [WooCommerce Health Check](./woocommerce-health-check/) | `"check woocommerce health"` | Checkout issues, cart problems, payment gateways, mobile checkout |
-| [Mobile Experience Report](./mobile-experience-report/) | `"audit mobile experience"` | Broken layouts, column stacking, typography, navigation on phones |
+### Audit Skills
 
----
+**[WordPress Site DNA](./wordpress-site-dna/)**  
+Comprehensive site archaeology: builders, plugins, content structure, technical debt.  
+*By Respira Team*
 
-## How it works
+**[Technical Debt Audit](./technical-debt-audit/)**  
+Finds orphaned shortcodes, unused plugins, database bloat, inactive builder data.  
+*By Respira Team*
 
-1. **Install [Respira for WordPress](https://www.respira.press)** on your WordPress site
-2. **Connect Claude** via the MCP server: `npx -y @respira/wordpress-mcp-server --setup`
-3. **Say a trigger phrase** in Claude — the skill activates automatically
+**[WooCommerce Health Check](./woocommerce-health-check/)**  
+Store diagnostics: checkout issues, cart problems, payment gateway configuration.  
+*By Respira Team* · Requires WooCommerce add-on
 
-No configuration files to edit. No code to deploy. Just type a phrase and Claude runs the full audit.
-
----
-
-## Requirements
-
-- [Respira for WordPress](https://www.respira.press) plugin (free)
-- Claude Desktop or Claude.ai with MCP support
-- WordPress 5.0+
-
----
-
-## What's a Skill?
-
-Each skill is a `SKILL.md` file — a structured markdown document that Claude reads as instructions. It defines:
-
-- Which trigger phrases activate it
-- The step-by-step execution workflow
-- Which MCP tools to call (and in what order)
-- How to calculate scores and generate reports
-- How to handle errors and partial failures
-- Evaluation test cases for measuring accuracy
-
-Skills are plain text. You can read them, modify them, or build your own.
-
----
-
-## Skill structure
-
-```
-skill-name/
-├── SKILL.md     ← The skill definition (what Claude reads)
-└── README.md    ← Human-readable description and trigger phrases
-```
-
-Some skills include a `tests/` directory with benchmark, trigger tuning, and regression test cases.
+**[Mobile Experience Report](./mobile-experience-report/)**  
+Mobile layout analysis: responsive breakpoints, touch targets, navigation issues.  
+*By Respira Team*
 
 ---
 
 ## Contributing
 
-Skills are open for community contributions. To propose a new skill or improve an existing one, open a pull request with a `SKILL.md` following the established format.
+**We want skills that solve real problems on real WordPress sites.**
 
-Good skill candidates:
-- Repeatable WordPress audits with clear pass/fail criteria
-- Tasks requiring multiple MCP tool calls in sequence
-- Analysis that benefits from structured scoring and reporting
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for:
+- How to submit a skill
+- Quality standards
+- Skill structure requirements
+- Recognition and rewards
+
+**Quick start:**
+1. Fork this repo
+2. Create your skill in `your-skill-name/`
+3. Include `SKILL.md` and `README.md` (and `metadata.json` if available)
+4. Test on 3+ real WordPress sites
+5. Submit PR
+
+[Read Full Guidelines ->](./CONTRIBUTING.md)
 
 ---
 
-## Telemetry
+## Recognition
 
-Each skill sends anonymous usage data to Respira after running (site URL, WordPress/PHP versions, health score, issue counts, duration). No PII. Fire-and-forget — telemetry failures never affect skill output.
+Accepted skills get:
+- Featured in https://respira.press/skills directory
+- Author attribution with link to your site/GitHub
+- Usage stats shared monthly
+- Promotion in newsletter and social channels
+- Your name in contributors list
+
+---
+
+## Support
+
+**Questions?**
+- Issues: https://github.com/webmyc/claude-skills-wordpress/issues
+- Discord: https://go.respira.cafe/respira-discord
+- Email: word@respira.press
+
+**Found a bug in a skill?**  
+Open an issue with the skill name in the title.
+
+**Want to improve a skill?**  
+Fork, improve, submit PR. Tag original author if possible.
 
 ---
 
 ## License
 
-MIT — see [LICENSE](./LICENSE)
+All skills are MIT licensed. By contributing, you agree to license your skill under MIT.
 
-Built by [Respira](https://www.respira.press)
+---
+
+## Directory
+
+Browse all skills: https://www.respira.press/skills
+
+Built by the WordPress community. Curated by Respira.

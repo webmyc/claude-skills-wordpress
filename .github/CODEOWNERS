@@ -1,0 +1,9 @@
+# Default reviewers for all PRs
+* @mihaidragomirescu
+
+# Skill-specific owners
+/wordpress-site-dna/ @mihaidragomirescu
+/technical-debt-audit/ @mihaidragomirescu
+/woocommerce-health-check/ @mihaidragomirescu
+/mobile-experience-report/ @mihaidragomirescu
+/wordpress-mcp-dev/ @mihaidragomirescu

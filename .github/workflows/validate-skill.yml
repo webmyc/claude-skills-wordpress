@@ -1,0 +1,44 @@
+name: Validate Skill Submission
+
+on:
+  pull_request:
+    paths:
+      - '**/SKILL.md'
+      - '**/README.md'
+      - '**/metadata.json'
+      - '.github/workflows/validate-skill.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate skill folder structure
+        run: |
+          set -euo pipefail
+          for dir in */ ; do
+            [ "$dir" = ".github/" ] && continue
+            [ "$dir" = ".git/" ] && continue
+            skill_dir="${dir%/}"
+            if [ ! -f "$skill_dir/SKILL.md" ]; then
+              echo "Missing SKILL.md in $skill_dir"
+              exit 1
+            fi
+            if [ ! -f "$skill_dir/README.md" ]; then
+              echo "Warning: Missing README.md in $skill_dir (legacy folders tolerated)"
+            fi
+          done
+
+      - name: Validate metadata.json when present
+        run: |
+          set -euo pipefail
+          found=false
+          while IFS= read -r metadata; do
+            found=true
+            echo "Checking $metadata"
+            jq empty "$metadata"
+          done < <(find . -mindepth 2 -maxdepth 2 -name metadata.json -type f | sort)
+          if [ "$found" = false ]; then
+            echo "No metadata.json files found; skipping JSON checks"
+          fi
