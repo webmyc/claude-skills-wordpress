@@ -45,6 +45,10 @@ Comprehensive on-page SEO and AEO optimization with automated duplicate creation
 Scans all content, generates intelligent schema markup, fixes titles/meta/headings.  
 *By Respira Team*
 
+**[WordPress AI Image Optimizer](./wordpress-ai-image-optimizer/)**  
+AI-powered image optimization: compress, convert to WebP, resize, rename. AI downloads images, processes locally, uploads optimized versions, and updates all references.  
+*By Respira Team*
+
 ---
 
 ## Contributing

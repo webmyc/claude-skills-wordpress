@@ -1,0 +1,63 @@
+{
+  "name": "WordPress AI Image Optimizer",
+  "slug": "wordpress-ai-image-optimizer",
+  "icon": "🖼️",
+  "category": "performance",
+  "description": "AI-powered image optimization: compress, convert to WebP, resize, rename with SEO-friendly names, generate alt text. Processes images locally in AI code editor and updates all content references.",
+  "author": "Respira Team",
+  "author_url": "https://respira.press",
+  "trigger": "optimize my wordpress images with ai",
+  "requires_respira": true,
+  "requires_woocommerce_addon": false,
+  "requires_accessibility_addon": false,
+  "is_read_only": false,
+  "is_duplicate_first": true,
+  "version": "1.0.0",
+  "last_updated": "2026-03-08",
+  "tools_used": [
+    "wordpress_list_media",
+    "wordpress_get_media",
+    "wordpress_upload_media",
+    "wordpress_update_media",
+    "wordpress_list_pages",
+    "wordpress_list_posts",
+    "wordpress_get_page",
+    "wordpress_get_post",
+    "wordpress_detect_page_builder",
+    "wordpress_create_duplicate",
+    "wordpress_update_page",
+    "wordpress_update_post",
+    "wordpress_list_plugins",
+    "woocommerce_list_products",
+    "woocommerce_get_product",
+    "woocommerce_update_product"
+  ],
+  "processing_tools": [
+    "ImageMagick",
+    "Sharp (Node.js)",
+    "Pillow (Python)"
+  ],
+  "detects": [
+    "oversized_images",
+    "inefficient_formats",
+    "missing_alt_text",
+    "non_seo_filenames",
+    "missing_responsive_sizes",
+    "suboptimal_compression",
+    "png_photos",
+    "no_lazy_loading",
+    "missing_dimensions",
+    "orphaned_media"
+  ],
+  "optimizations": [
+    "image_compression",
+    "format_conversion_webp",
+    "resize_oversized",
+    "seo_friendly_renaming",
+    "ai_alt_text_generation",
+    "responsive_size_regeneration",
+    "lazy_loading_implementation"
+  ],
+  "file_safety": "creates_new_keeps_old",
+  "processing_location": "ai_code_editor_local"
+}
