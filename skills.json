@@ -1,0 +1,90 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2026-03-14",
+  "skills": [
+    {
+      "slug": "wordpress-site-dna",
+      "name": "WordPress Site DNA",
+      "description": "Archaeological analysis of WordPress sites. Detects all page builders, audits plugins (active vs dead weight), maps content structure, finds orphaned shortcodes, measures performance, and assesses security posture.",
+      "category": "audit",
+      "author": "Respira for WordPress",
+      "version": "1.0.0",
+      "mcp_server": "respira-wordpress",
+      "requires_addon": null,
+      "github_url": "https://github.com/webmyc/claude-skills-wordpress/tree/main/skills/wordpress-site-dna",
+      "raw_url": "https://raw.githubusercontent.com/webmyc/claude-skills-wordpress/main/skills/wordpress-site-dna/SKILL.md"
+    },
+    {
+      "slug": "technical-debt-audit",
+      "name": "Technical Debt Audit",
+      "description": "Identifies technical debt in WordPress sites \u2014 orphaned shortcodes from deleted plugins, unused plugins, database bloat, unused media, builder data from inactive builders.",
+      "category": "audit",
+      "author": "Respira for WordPress",
+      "version": "1.0.0",
+      "mcp_server": "respira-wordpress",
+      "requires_addon": null,
+      "github_url": "https://github.com/webmyc/claude-skills-wordpress/tree/main/skills/technical-debt-audit",
+      "raw_url": "https://raw.githubusercontent.com/webmyc/claude-skills-wordpress/main/skills/technical-debt-audit/SKILL.md"
+    },
+    {
+      "slug": "woocommerce-health-check",
+      "name": "WooCommerce Health Check",
+      "description": "WooCommerce configuration diagnostics \u2014 identifies checkout problems, cart errors, AJAX mismatches, caching issues, payment gateway setup, SSL enforcement. Revenue-impacting diagnostics.",
+      "category": "audit",
+      "author": "Respira for WordPress",
+      "version": "1.0.0",
+      "mcp_server": "respira-wordpress",
+      "requires_addon": "woocommerce",
+      "github_url": "https://github.com/webmyc/claude-skills-wordpress/tree/main/skills/woocommerce-health-check",
+      "raw_url": "https://raw.githubusercontent.com/webmyc/claude-skills-wordpress/main/skills/woocommerce-health-check/SKILL.md"
+    },
+    {
+      "slug": "mobile-experience-report",
+      "name": "Mobile Experience Report",
+      "description": "Mobile layout diagnostics \u2014 identifies responsive breakpoint problems, text sizing issues, column stacking failures, element visibility issues, navigation menu behavior. Device-by-device breakdown.",
+      "category": "audit",
+      "author": "Respira for WordPress",
+      "version": "1.0.0",
+      "mcp_server": "respira-wordpress",
+      "requires_addon": null,
+      "github_url": "https://github.com/webmyc/claude-skills-wordpress/tree/main/skills/mobile-experience-report",
+      "raw_url": "https://raw.githubusercontent.com/webmyc/claude-skills-wordpress/main/skills/mobile-experience-report/SKILL.md"
+    },
+    {
+      "slug": "seo-aeo-amplifier",
+      "name": "SEO & AEO Amplifier",
+      "description": "Comprehensive on-page SEO and Answer Engine Optimization audit with automated duplicate creation and intelligent schema markup generation.",
+      "category": "performance",
+      "author": "Respira for WordPress",
+      "version": "1.0.0",
+      "mcp_server": "respira-wordpress",
+      "requires_addon": null,
+      "github_url": "https://github.com/webmyc/claude-skills-wordpress/tree/main/skills/seo-aeo-amplifier",
+      "raw_url": "https://raw.githubusercontent.com/webmyc/claude-skills-wordpress/main/skills/seo-aeo-amplifier/SKILL.md"
+    },
+    {
+      "slug": "wordpress-ai-image-optimizer",
+      "name": "WordPress AI Image Optimizer",
+      "description": "AI-powered image optimization that downloads images from WordPress, processes locally (compress, WebP conversion, resize, rename), uploads optimized versions, and updates all content references.",
+      "category": "performance",
+      "author": "Respira for WordPress",
+      "version": "1.0.0",
+      "mcp_server": "respira-wordpress",
+      "requires_addon": null,
+      "github_url": "https://github.com/webmyc/claude-skills-wordpress/tree/main/skills/wordpress-ai-image-optimizer",
+      "raw_url": "https://raw.githubusercontent.com/webmyc/claude-skills-wordpress/main/skills/wordpress-ai-image-optimizer/SKILL.md"
+    },
+    {
+      "slug": "internal-link-builder",
+      "name": "Internal Link Builder",
+      "description": "Strategic internal link building for WordPress sites. Analyzes all published content, maps topic relationships, identifies high-value linking opportunities between pages, and presents a clear plan for approval before making any changes.",
+      "category": "performance",
+      "author": "Respira for WordPress",
+      "version": "1.0.0",
+      "mcp_server": "respira-wordpress",
+      "requires_addon": null,
+      "github_url": "https://github.com/webmyc/claude-skills-wordpress/tree/main/skills/internal-link-builder",
+      "raw_url": "https://raw.githubusercontent.com/webmyc/claude-skills-wordpress/main/skills/internal-link-builder/SKILL.md"
+    }
+  ]
+}
