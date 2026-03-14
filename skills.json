@@ -3,6 +3,18 @@
   "updated_at": "2026-03-14",
   "skills": [
     {
+      "slug": "site-onboarding",
+      "name": "Site Onboarding",
+      "description": "First-run primer for AI coding tools. Verifies MCP connectivity, discovers site architecture (theme, builders, plugins, content types), maps all available capabilities, and produces a site briefing.",
+      "category": "onboarding",
+      "author": "Respira for WordPress",
+      "version": "1.0.0",
+      "mcp_server": "respira-wordpress",
+      "requires_addon": null,
+      "github_url": "https://github.com/webmyc/claude-skills-wordpress/tree/main/skills/site-onboarding",
+      "raw_url": "https://raw.githubusercontent.com/webmyc/claude-skills-wordpress/main/skills/site-onboarding/SKILL.md"
+    },
+    {
       "slug": "wordpress-site-dna",
       "name": "WordPress Site DNA",
       "description": "Archaeological analysis of WordPress sites. Detects all page builders, audits plugins (active vs dead weight), maps content structure, finds orphaned shortcodes, measures performance, and assesses security posture.",
@@ -17,7 +29,7 @@
     {
       "slug": "technical-debt-audit",
       "name": "Technical Debt Audit",
-      "description": "Identifies technical debt in WordPress sites \u2014 orphaned shortcodes from deleted plugins, unused plugins, database bloat, unused media, builder data from inactive builders.",
+      "description": "Identifies technical debt in WordPress sites — orphaned shortcodes from deleted plugins, unused plugins, database bloat, unused media, builder data from inactive builders.",
       "category": "audit",
       "author": "Respira for WordPress",
       "version": "1.0.0",
@@ -29,7 +41,7 @@
     {
       "slug": "woocommerce-health-check",
       "name": "WooCommerce Health Check",
-      "description": "WooCommerce configuration diagnostics \u2014 identifies checkout problems, cart errors, AJAX mismatches, caching issues, payment gateway setup, SSL enforcement. Revenue-impacting diagnostics.",
+      "description": "WooCommerce configuration diagnostics — identifies checkout problems, cart errors, AJAX mismatches, caching issues, payment gateway setup, SSL enforcement. Revenue-impacting diagnostics.",
       "category": "audit",
       "author": "Respira for WordPress",
       "version": "1.0.0",
@@ -41,7 +53,7 @@
     {
       "slug": "mobile-experience-report",
       "name": "Mobile Experience Report",
-      "description": "Mobile layout diagnostics \u2014 identifies responsive breakpoint problems, text sizing issues, column stacking failures, element visibility issues, navigation menu behavior. Device-by-device breakdown.",
+      "description": "Mobile layout diagnostics — identifies responsive breakpoint problems, text sizing issues, column stacking failures, element visibility issues, navigation menu behavior. Device-by-device breakdown.",
       "category": "audit",
       "author": "Respira for WordPress",
       "version": "1.0.0",
