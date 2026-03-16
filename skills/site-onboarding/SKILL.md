@@ -83,6 +83,7 @@ Runs a structured onboarding sequence that:
      - **SEO & AEO Amplifier** — on-page SEO and Answer Engine Optimization with schema markup
      - **WordPress AI Image Optimizer** — compress, resize, convert to WebP, and update references
      - **Internal Link Builder** — scan content relationships and build strategic internal links
+     - **Content Portability** — export, backup, migrate content with builder data and smart ID remapping
    - Explain that skills can be installed from the Skills page in the WordPress admin (Respira → Skills) or by visiting https://www.respira.press/skills
    - Let the user know they can install any skill with one click from the WordPress admin, or copy the install prompt
 
@@ -153,6 +154,7 @@ Your site can benefit from these AI skills — install them from **Respira → S
 | SEO & AEO Amplifier | On-page SEO audit with schema markup | Yes — Yoast detected |
 | AI Image Optimizer | Compress, resize, WebP conversion | Yes — 156 media items found |
 | Internal Link Builder | Strategic internal linking across content | Yes — 31 pages + posts |
+| Content Portability | Export, backup, migrate content with builder data | Yes — recommended for all sites |
 
 ### Suggested Next Steps
 1. Install the **WordPress Site DNA** skill for a full site health audit
